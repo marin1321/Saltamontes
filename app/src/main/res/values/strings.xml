@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Saltamontes</string>
+    <string name="Documento">Documento</string>
+    <string name="Nombre_Completo">Nombre Completo</string>
+    <string name="Edad">Edad</string>
+    <string name="Telefono">Telefono</string>
+    <string name="Direccion">Direccion</string>
+    <string name="Nota">Nota</string>
+    <string name="Nombre_Materia">Nombre Materia</string>
+    <string name="Welcome">Welcome</string>
+</resources>
