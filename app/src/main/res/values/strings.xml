@@ -8,4 +8,5 @@
     <string name="Nota">Nota</string>
     <string name="Nombre_Materia">Nombre Materia</string>
     <string name="Welcome">Welcome</string>
+    <string name="Promedio_Final">Promedio Final</string>
 </resources>
