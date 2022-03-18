@@ -10,22 +10,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Saltamontes">
         <activity
+            android:name=".Splash"
+            android:exported="true"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MenuActivity"
+            android:exported="true" />
+        <activity
             android:name=".ResultsActivity"
             android:exported="false" />
         <activity
             android:name=".Estudiante"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
         </activity>
     </application>
 

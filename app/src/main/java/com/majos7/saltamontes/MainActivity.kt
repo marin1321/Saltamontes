@@ -29,11 +29,12 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Thread.sleep(300)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         txtDocumento=findViewById(R.id.Documento)
-        txtNombre=findViewById(R.id.Nombre)
+        txtNombre=findViewById(R.id.nombre)
         txtEdad=findViewById(R.id.Edad)
         txtTelefono=findViewById(R.id.Telefono)
         txtDireccion=findViewById(R.id.Direccion)
@@ -59,22 +60,49 @@ class MainActivity : AppCompatActivity() {
         var miEstudiante:Estudiante= Estudiante()
         miEstudiante.documento=txtDocumento?.text.toString()
         miEstudiante.nombre=txtNombre?.text.toString()
-        miEstudiante.edad=txtEdad?.text.toString().toInt()
+        try {
+            miEstudiante.edad=txtEdad?.text.toString().toInt()
+        }catch (e:NumberFormatException){
+            miEstudiante.edad=0
+        }
         miEstudiante.telefono=txtTelefono?.text.toString()
         miEstudiante.direccion=txtDireccion?.text.toString()
 
         miEstudiante.nombreMateria1=txtNombreMateria1?.text.toString()
-        miEstudiante.notaMateria1=txtNotaMateria1?.text.toString().toDouble()
+        try {
+            miEstudiante.notaMateria1=txtNotaMateria1?.text.toString().toDouble()
+        }catch (e:NumberFormatException){
+            miEstudiante.notaMateria1=0.0
+        }
         miEstudiante.nombreMateria2=txtNombreMateria2?.text.toString()
-        miEstudiante.notaMateria2=txtNotaMateria2?.text.toString().toDouble()
+        try {
+            miEstudiante.notaMateria2=txtNotaMateria2?.text.toString().toDouble()
+        }catch (e:NumberFormatException){
+            miEstudiante.notaMateria2=0.0
+        }
         miEstudiante.nombreMateria3=txtNombreMateria3?.text.toString()
-        miEstudiante.notaMateria3=txtNotaMateria3?.text.toString().toDouble()
+        try {
+            miEstudiante.notaMateria3=txtNotaMateria3?.text.toString().toDouble()
+        }catch (e:NumberFormatException){
+            miEstudiante.notaMateria3=0.0
+        }
         miEstudiante.nombreMateria4=txtNombreMateria4?.text.toString()
-        miEstudiante.notaMateria4=txtNotaMateria4?.text.toString().toDouble()
+        try {
+            miEstudiante.notaMateria4=txtNotaMateria4?.text.toString().toDouble()
+        }catch (e:NumberFormatException){
+            miEstudiante.notaMateria4=0.0
+        }
         miEstudiante.nombreMateria5=txtNombreMateria5?.text.toString()
-        miEstudiante.notaMateria5=txtNotaMateria5?.text.toString().toDouble()
-        var promedio = miEstudiante.notaMateria1!! +miEstudiante.notaMateria2!!+miEstudiante.notaMateria3!!+miEstudiante.notaMateria4!!+miEstudiante.notaMateria5!!/5
+        try {
+            miEstudiante.notaMateria5=txtNotaMateria5?.text.toString().toDouble()
+        }catch (e:NumberFormatException){
+            miEstudiante.notaMateria5=0.0
+        }
+
+        var promedio = (miEstudiante.notaMateria1!!+miEstudiante.notaMateria2!!+miEstudiante.notaMateria3!!+miEstudiante.notaMateria4!!+miEstudiante.notaMateria5!!)/5
+
         miEstudiante.promedioFinal=promedio
+
         var resultado:String?=null
         if (promedio>3.5){
             resultado="Gano"
@@ -102,7 +130,7 @@ class MainActivity : AppCompatActivity() {
         bundle.putDouble("notaMateria4", miEstudiante.notaMateria4!!)
         bundle.putString("nombreMateria5", miEstudiante.nombreMateria5)
         bundle.putDouble("notaMateria5", miEstudiante.notaMateria5!!)
-        bundle.putDouble("promedio", miEstudiante.promedioFinal!!)
+        bundle.putDouble("promedioF",miEstudiante.promedioFinal!!)
         bundle.putString("resultado", miEstudiante.resultado)
 
         var recuperacion: Boolean? = null
@@ -113,7 +141,6 @@ class MainActivity : AppCompatActivity() {
         }else{
             recuperacion=null
         }
-
         if (recuperacion != null) {
             bundle.putBoolean("recuperacion", recuperacion)
         }

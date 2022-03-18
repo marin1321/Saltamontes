@@ -9,4 +9,7 @@
     <string name="Nombre_Materia">Nombre Materia</string>
     <string name="Welcome">Welcome</string>
     <string name="Promedio_Final">Promedio Final</string>
+    <string name="Nuevo_Registro">Nuevo Registro</string>
+    <string name="Estadisticas">Estadisticas</string>
+    <string name="Ayuda">Ayuda</string>
 </resources>
