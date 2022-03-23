@@ -10,26 +10,24 @@ class MainActivity : AppCompatActivity() {
 
     var listEstudiantes= mutableListOf<Estudiante>()
 
-    var txtDocumento:EditText?=null
-    var txtNombre:EditText?=null
-    var txtEdad:EditText?=null
-    var txtTelefono:EditText?=null
-    var txtDireccion:EditText?=null
+    var txtDocumento: EditText?=null
+    var txtNombre: EditText?=null
+    var txtEdad: EditText?=null
+    var txtTelefono: EditText?=null
+    var txtDireccion: EditText?=null
 
-    var txtNombreMateria1:EditText?=null
-    var txtNotaMateria1:EditText?=null
-    var txtNombreMateria2:EditText?=null
-    var txtNotaMateria2:EditText?=null
-    var txtNombreMateria3:EditText?=null
-    var txtNotaMateria3:EditText?=null
-    var txtNombreMateria4:EditText?=null
-    var txtNotaMateria4:EditText?=null
-    var txtNombreMateria5:EditText?=null
-    var txtNotaMateria5:EditText?=null
-
+    var txtNombreMateria1: EditText?=null
+    var txtNotaMateria1: EditText?=null
+    var txtNombreMateria2: EditText?=null
+    var txtNotaMateria2: EditText?=null
+    var txtNombreMateria3: EditText?=null
+    var txtNotaMateria3: EditText?=null
+    var txtNombreMateria4: EditText?=null
+    var txtNotaMateria4: EditText?=null
+    var txtNombreMateria5: EditText?=null
+    var txtNotaMateria5: EditText?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Thread.sleep(300)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -53,7 +51,13 @@ class MainActivity : AppCompatActivity() {
         var btnCalcular:Button=findViewById(R.id.BtnCalcular)
         btnCalcular.setOnClickListener{onClick()}
 
+        var btnSalir:Button=findViewById(R.id.BtnSalir)
+        btnSalir.setOnClickListener{onClickSalir()}
+    }
 
+    private fun onClickSalir() {
+        var intent = Intent(this,MenuActivity::class.java)
+        startActivity(intent)
     }
 
     private fun onClick() {
@@ -149,6 +153,5 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
 
     }
-
 
 }

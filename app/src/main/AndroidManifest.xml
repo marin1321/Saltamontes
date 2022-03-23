@@ -21,7 +21,7 @@
         </activity>
 
         <activity
-            android:name=".MenuActivity"
+            android:name=".MainActivity"
             android:exported="true" />
         <activity
             android:name=".ResultsActivity"
@@ -30,7 +30,7 @@
             android:name=".Estudiante"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".MenuActivity"
             android:exported="false">
         </activity>
     </application>

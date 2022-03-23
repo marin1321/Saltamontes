@@ -7,7 +7,6 @@
     tools:context=".MainActivity"
     android:background="@drawable/fondohorizontal">
 
-
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
@@ -38,206 +37,218 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.043" />
 
+    <Button
+        android:id="@+id/BtnSalir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue"
+        android:text="SALIR"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.683"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.044" />
+
     <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="300dp"
+        android:id="@+id/linearLayout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="left"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.0">
+
+        <EditText
+            android:id="@+id/Documento"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:gravity="left"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.106"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
-            app:layout_constraintVertical_bias="0.0">
+            android:layout_marginVertical="5dp"
+            android:hint="@string/Documento"
+            android:inputType="number" />
 
-            <EditText
-                android:id="@+id/Documento"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="5dp"
-                android:hint="@string/Documento"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/nombre"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="5dp"
-                android:hint="@string/Nombre_Completo"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/Edad"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="5dp"
-                android:hint="@string/Edad"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/Telefono"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="5dp"
-                android:hint="@string/Telefono"
-                android:inputType="number" />
-
-
-            <EditText
-                android:id="@+id/Direccion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="5dp"
-                android:hint="@string/Direccion"
-                android:inputType="text" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayoute"
-            android:layout_width="300dp"
+        <EditText
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:gravity="right"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.907"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
-            app:layout_constraintVertical_bias="0.0">
+            android:layout_marginVertical="5dp"
+            android:hint="@string/Nombre_Completo"
+            android:inputType="text" />
 
-            <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="5dp">
+        <EditText
+            android:id="@+id/Edad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:hint="@string/Edad"
+            android:inputType="number" />
 
-                <TableRow>
-
-                    <EditText
-                        android:id="@+id/NombreMateria1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="@string/Nombre_Materia"
-                        android:inputType="text" />
-
-                    <EditText
-                        android:id="@+id/NotaMateria1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="9"
-                        android:hint="@string/Nota"
-                        android:inputType="numberDecimal" />
-                </TableRow>
-            </TableLayout>
-
-            <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="5dp">
-
-                <TableRow>
-
-                    <EditText
-                        android:id="@+id/NombreMateria2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="@string/Nombre_Materia"
-                        android:inputType="text" />
-
-                    <EditText
-                        android:id="@+id/NotaMateria2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="9"
-                        android:hint="@string/Nota"
-                        android:inputType="numberDecimal" />
-                </TableRow>
-            </TableLayout>
-
-            <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="5dp">
-
-                <TableRow>
-
-                    <EditText
-                        android:id="@+id/NombreMateria3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="@string/Nombre_Materia"
-                        android:inputType="text" />
-
-                    <EditText
-                        android:id="@+id/NotaMateria3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="9"
-                        android:hint="@string/Nota"
-                        android:inputType="numberDecimal" />
-                </TableRow>
-            </TableLayout>
-
-            <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="5dp">
-
-                <TableRow>
-
-                    <EditText
-                        android:id="@+id/NombreMateria4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="@string/Nombre_Materia"
-                        android:inputType="text" />
-
-                    <EditText
-                        android:id="@+id/NotaMateria4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="9"
-                        android:hint="@string/Nota"
-                        android:inputType="numberDecimal" />
-                </TableRow>
-            </TableLayout>
-
-            <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="5dp">
-
-                <TableRow>
-
-                    <EditText
-                        android:id="@+id/NombreMateria5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="@string/Nombre_Materia"
-                        android:inputType="text" />
-
-                    <EditText
-                        android:id="@+id/NotaMateria5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="9"
-                        android:hint="@string/Nota"
-                        android:inputType="numberDecimal" />
-                </TableRow>
-            </TableLayout>
-
-        </LinearLayout>
+        <EditText
+            android:id="@+id/Telefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:hint="@string/Telefono"
+            android:inputType="number" />
 
 
+        <EditText
+            android:id="@+id/Direccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:hint="@string/Direccion"
+            android:inputType="text" />
 
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoute"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="right"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.907"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp">
+
+            <TableRow>
+
+                <EditText
+                    android:id="@+id/NombreMateria1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/Nombre_Materia"
+                    android:inputType="text" />
+
+                <EditText
+                    android:id="@+id/NotaMateria1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="9"
+                    android:hint="@string/Nota"
+                    android:inputType="numberDecimal" />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp">
+
+            <TableRow>
+
+                <EditText
+                    android:id="@+id/NombreMateria2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/Nombre_Materia"
+                    android:inputType="text" />
+
+                <EditText
+                    android:id="@+id/NotaMateria2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="9"
+                    android:hint="@string/Nota"
+                    android:inputType="numberDecimal" />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp">
+
+            <TableRow>
+
+                <EditText
+                    android:id="@+id/NombreMateria3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/Nombre_Materia"
+                    android:inputType="text" />
+
+                <EditText
+                    android:id="@+id/NotaMateria3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="9"
+                    android:hint="@string/Nota"
+                    android:inputType="numberDecimal" />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp">
+
+            <TableRow>
+
+                <EditText
+                    android:id="@+id/NombreMateria4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/Nombre_Materia"
+                    android:inputType="text" />
+
+                <EditText
+                    android:id="@+id/NotaMateria4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="9"
+                    android:hint="@string/Nota"
+                    android:inputType="numberDecimal" />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp">
+
+            <TableRow>
+
+                <EditText
+                    android:id="@+id/NombreMateria5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/Nombre_Materia"
+                    android:inputType="text" />
+
+                <EditText
+                    android:id="@+id/NotaMateria5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="9"
+                    android:hint="@string/Nota"
+                    android:inputType="numberDecimal" />
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

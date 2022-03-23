@@ -6,9 +6,13 @@ import android.os.Bundle
 import android.widget.Button
 
 class MenuActivity : AppCompatActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        Thread.sleep(300)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
+
 
         var btnNuevo = findViewById<Button>(R.id.btnNuevo)
         btnNuevo.setOnClickListener { onClickNuevo() }
@@ -18,4 +22,5 @@ class MenuActivity : AppCompatActivity() {
         var intent = Intent(this,MainActivity::class.java)
         startActivity(intent)
     }
+
 }

@@ -32,6 +32,7 @@ class ResultsActivity : AppCompatActivity() {
         var notaMateria4 = findViewById<TextView>(R.id.notaMateria4)
         var nombreMateria5 = findViewById<TextView>(R.id.nombreMateria5)
         var notaMateria5 = findViewById<TextView>(R.id.notaMateria5)
+        var recupera = findViewById<TextView>(R.id.recupera)
 
         var bundle: Bundle? = this.intent.extras
 
@@ -52,8 +53,9 @@ class ResultsActivity : AppCompatActivity() {
         notaMateria4.text="${bundle?.getDouble("notaMateria4")}"
         nombreMateria5.text="${bundle?.getString("nombreMateria5")}"
         notaMateria5.text="${bundle?.getDouble("notaMateria5")}"
-
-
+        if (bundle?.getString("resultado")=="Perdio") {
+            recupera.text = "${bundle?.getBoolean("recuperacion")}"
+        }
     }
 
     private fun onClick() {
