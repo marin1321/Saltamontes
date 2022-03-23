@@ -8,7 +8,7 @@ import android.widget.EditText
 
 class MainActivity : AppCompatActivity() {
 
-    var listEstudiantes= mutableListOf<Estudiante>()
+    var misoperaciones:Operaciones?=null
 
     var txtDocumento: EditText?=null
     var txtNombre: EditText?=null
@@ -61,6 +61,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onClick() {
+        misoperaciones=Operaciones()
         var miEstudiante:Estudiante= Estudiante()
         miEstudiante.documento=txtDocumento?.text.toString()
         miEstudiante.nombre=txtNombre?.text.toString()
@@ -115,7 +116,9 @@ class MainActivity : AppCompatActivity() {
         }
         miEstudiante.resultado=resultado
 
-        listEstudiantes.add(miEstudiante)
+
+        misoperaciones!!.registar(miEstudiante)
+
 
         var intent = Intent(this,ResultsActivity::class.java)
         val bundle:Bundle= Bundle()

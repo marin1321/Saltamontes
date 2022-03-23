@@ -11,8 +11,8 @@ class ResultsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_results)
 
-        val resultado = findViewById<TextView>(R.id.resultado)
-        val promedio = findViewById<TextView>(R.id.promedio)
+        var resultado = findViewById<TextView>(R.id.resultado)
+        var promedio = findViewById<TextView>(R.id.promedio)
         var documento = findViewById<TextView>(R.id.documento)
         var nombre = findViewById<TextView>(R.id.nombre)
         var edad = findViewById<TextView>(R.id.edad)

@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Saltamontes">
         <activity
+            android:name=".Operaciones"
+            android:exported="false" />
+        <activity
+            android:name=".EstadisticasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListaEstudiantes"
+            android:exported="false" />
+        <activity
             android:name=".Splash"
             android:exported="true"
             android:theme="@style/SplashTheme">
@@ -19,7 +28,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:exported="true" />
@@ -31,8 +39,7 @@
             android:exported="false" />
         <activity
             android:name=".MenuActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>
