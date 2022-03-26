@@ -10,13 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Saltamontes">
         <activity
-            android:name=".Operaciones"
+            android:name=".HelpActivity"
             android:exported="false" />
         <activity
             android:name=".EstadisticasActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ListaEstudiantes"
             android:exported="false" />
         <activity
             android:name=".Splash"
@@ -33,9 +30,6 @@
             android:exported="true" />
         <activity
             android:name=".ResultsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Estudiante"
             android:exported="false" />
         <activity
             android:name=".MenuActivity"

@@ -54,7 +54,7 @@ class ResultsActivity : AppCompatActivity() {
         nombreMateria5.text="${bundle?.getString("nombreMateria5")}"
         notaMateria5.text="${bundle?.getDouble("notaMateria5")}"
         if (bundle?.getString("resultado")=="Perdio") {
-            recupera.text = "${bundle?.getBoolean("recuperacion")}"
+            recupera.text = "Puede recuperar: ${bundle?.getBoolean("recuperacion")}"
         }
     }
 

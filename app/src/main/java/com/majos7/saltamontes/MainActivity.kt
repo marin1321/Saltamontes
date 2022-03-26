@@ -5,10 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
-
-    var misoperaciones:Operaciones?=null
 
     var txtDocumento: EditText?=null
     var txtNombre: EditText?=null
@@ -61,7 +60,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onClick() {
-        misoperaciones=Operaciones()
         var miEstudiante:Estudiante= Estudiante()
         miEstudiante.documento=txtDocumento?.text.toString()
         miEstudiante.nombre=txtNombre?.text.toString()
@@ -115,45 +113,48 @@ class MainActivity : AppCompatActivity() {
             resultado="Perdio"
         }
         miEstudiante.resultado=resultado
+        
+        if (miEstudiante.documento!="" && miEstudiante.nombre!="" && miEstudiante.nombreMateria1!="" && miEstudiante.nombreMateria2!="" && miEstudiante.nombreMateria3!="" && miEstudiante.nombreMateria4!="" && miEstudiante.nombreMateria5!="") {
+            Operaciones.registar(miEstudiante)
 
 
-        misoperaciones!!.registar(miEstudiante)
+            var intent = Intent(this, ResultsActivity::class.java)
+            val bundle: Bundle = Bundle()
+            bundle.putString("documento", miEstudiante.documento)
+            bundle.putString("nombre", miEstudiante.nombre)
+            bundle.putInt("edad", miEstudiante.edad!!)
+            bundle.putString("telefono", miEstudiante.telefono)
+            bundle.putString("direccion", miEstudiante.direccion)
+            bundle.putString("nombreMateria1", miEstudiante.nombreMateria1)
+            bundle.putDouble("notaMateria1", miEstudiante.notaMateria1!!)
+            bundle.putString("nombreMateria2", miEstudiante.nombreMateria2)
+            bundle.putDouble("notaMateria2", miEstudiante.notaMateria2!!)
+            bundle.putString("nombreMateria3", miEstudiante.nombreMateria3)
+            bundle.putDouble("notaMateria3", miEstudiante.notaMateria3!!)
+            bundle.putString("nombreMateria4", miEstudiante.nombreMateria4)
+            bundle.putDouble("notaMateria4", miEstudiante.notaMateria4!!)
+            bundle.putString("nombreMateria5", miEstudiante.nombreMateria5)
+            bundle.putDouble("notaMateria5", miEstudiante.notaMateria5!!)
+            bundle.putDouble("promedioF", miEstudiante.promedioFinal!!)
+            bundle.putString("resultado", miEstudiante.resultado)
 
+            var recuperacion: Boolean? = null
+            if (promedio <= 2.5) {
+                recuperacion = false
+            } else if (promedio <= 3.5) {
+                recuperacion = true
+            } else {
+                recuperacion = null
+            }
+            if (recuperacion != null) {
+                bundle.putBoolean("recuperacion", recuperacion)
+            }
 
-        var intent = Intent(this,ResultsActivity::class.java)
-        val bundle:Bundle= Bundle()
-        bundle.putString("documento",miEstudiante.documento)
-        bundle.putString("nombre",miEstudiante.nombre)
-        bundle.putInt("edad", miEstudiante.edad!!)
-        bundle.putString("telefono", miEstudiante.telefono)
-        bundle.putString("direccion", miEstudiante.direccion)
-        bundle.putString("nombreMateria1", miEstudiante.nombreMateria1)
-        bundle.putDouble("notaMateria1", miEstudiante.notaMateria1!!)
-        bundle.putString("nombreMateria2", miEstudiante.nombreMateria2)
-        bundle.putDouble("notaMateria2", miEstudiante.notaMateria2!!)
-        bundle.putString("nombreMateria3", miEstudiante.nombreMateria3)
-        bundle.putDouble("notaMateria3", miEstudiante.notaMateria3!!)
-        bundle.putString("nombreMateria4", miEstudiante.nombreMateria4)
-        bundle.putDouble("notaMateria4", miEstudiante.notaMateria4!!)
-        bundle.putString("nombreMateria5", miEstudiante.nombreMateria5)
-        bundle.putDouble("notaMateria5", miEstudiante.notaMateria5!!)
-        bundle.putDouble("promedioF",miEstudiante.promedioFinal!!)
-        bundle.putString("resultado", miEstudiante.resultado)
-
-        var recuperacion: Boolean? = null
-        if (promedio<=2.5){
-            recuperacion=false
-        }else if(promedio<=3.5){
-            recuperacion=true
+            intent.putExtras(bundle)
+            startActivity(intent)
         }else{
-            recuperacion=null
+            Toast.makeText(applicationContext, "LLena todos los campos requeridos porfavor", Toast.LENGTH_SHORT).show()
         }
-        if (recuperacion != null) {
-            bundle.putBoolean("recuperacion", recuperacion)
-        }
-
-        intent.putExtras(bundle)
-        startActivity(intent)
 
     }
 

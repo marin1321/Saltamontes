@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 
-class Estudiante : AppCompatActivity() {
+class Estudiante {
 
     var documento:String?=null
     var nombre:String?=null
@@ -94,8 +94,4 @@ class Estudiante : AppCompatActivity() {
             field = value
         }
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 }

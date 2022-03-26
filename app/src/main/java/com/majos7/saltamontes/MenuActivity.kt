@@ -19,6 +19,14 @@ class MenuActivity : AppCompatActivity() {
 
         var btnEstadistica = findViewById<Button>(R.id.btnEsdistica)
         btnEstadistica.setOnClickListener { onClickEstadistica() }
+
+        var btnAyuda = findViewById<Button>(R.id.btnAyuda)
+        btnAyuda.setOnClickListener { onClickAyuda() }
+    }
+
+    private fun onClickAyuda() {
+        var intent = Intent(this,HelpActivity::class.java)
+        startActivity(intent)
     }
 
     private fun onClickEstadistica() {
@@ -29,7 +37,6 @@ class MenuActivity : AppCompatActivity() {
 
     private fun onClickNuevo() {
         var intent = Intent(this,MainActivity::class.java)
-        val bundle:Bundle= Bundle()
         startActivity(intent)
     }
 
