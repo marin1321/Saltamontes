@@ -79,11 +79,11 @@ class Estudiante {
         }
 
     var resultado: String?=null
+    var recuperacion: Boolean?=null
     var promedioFinal: Double?=null
         set(value) {
             if (value != null) {
                 if (value<=3.5) {
-                    var recuperacion: Boolean? = null
                     if (value<=2.5){
                         recuperacion=false
                     }else{
